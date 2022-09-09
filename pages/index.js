@@ -11,9 +11,14 @@ export default function Home({data}) {
 
   const [formData, setFormData] = useState({})
 
-  const saveMovie = e =>{
+  const saveMovie = async e =>{
     e.preventDefault()
-    console.log(formData)
+    // console.log(formData)
+
+    const response = await fetch('/api/movies', {
+      method: 'POST',
+      body: JSON.stringify(formData)
+    })
   }
 
   return (
@@ -27,7 +32,7 @@ export default function Home({data}) {
       <main className={styles.main}>
         <ul className={styles.movielist}>
           {data.map(item =>(
-            <li key={item.id}>{item.title} 
+            <li key={item.id}>
               <span><strong> {item.title} </strong> </span>
               <span>{item.description} </span>
               <span>{item.year} </span>
