@@ -1,4 +1,4 @@
-.container {
+/* .container {
   padding: 0 2rem;
 }
 
@@ -126,4 +126,22 @@
   .logo img {
     filter: invert(1);
   }
+}
+
+
+
+ */
+
+.movielist{
+  list-style: none;
+  padding: 0;
+  margin: 40px;
+}
+
+.movielist li{
+  margin-bottom: 20px;
+}
+
+.movielist span{
+  display: block;
 }
